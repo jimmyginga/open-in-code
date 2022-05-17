@@ -1,0 +1,46 @@
+{
+  "name": "openincode",
+  "version": "1.0.0",
+  "description": "The open code is a shortcut application to open frequently projects quickly in your vs code",
+  "main": "main.js",
+  "author": "Jimi Nginga <jiminginga@gmail.com>",
+  "type": "commonjs",
+  "license": "MIT",
+  "repository": "https://github.com/jimmyginga/open-in-code.git",
+  "scripts": {
+    "start": "electron .",
+    "app:dir": "electron-builder --dir",
+    "app:dist": "electron-builder",
+    "dist:linux": "electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "electron": "^18.0.2",
+    "electron-builder": "^23.0.3",
+    "electron-installer-debian": "^3.1.0"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "electron-store": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.openincode.app",
+    "mac": {
+      "category": "jimi.app.development.type",
+      "icon":"assets/img/vs.png",
+      "target": [
+        "dmg",
+        "pkg"
+      ]
+    },
+    "linux": {
+      "category": "Utility",
+      "icon":"assets/img/vs.png",
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ]
+    }
+  }
+}
